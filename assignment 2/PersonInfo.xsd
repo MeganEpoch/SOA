@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://jw.nju.edu.cn/schema"
-        xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
+        targetNamespace="http://www.nju.edu.cn/schema"
+        xmlns:nju="http://www.nju.edu.cn/schema"  elementFormDefault="qualified">
 
     <include schemaLocation="Department.xsd"></include>
 
-    <element name="personInfo" type="tns:个人信息类型"></element>
+    <element name="personInfo" type="nju:个人信息类型"></element>
 
     <simpleType name="姓名类型">
         <restriction base="string">
@@ -15,8 +15,8 @@
     
     <complexType name="个人信息类型">
         <sequence>
-            <element name="name" type="tns:姓名类型"></element>
-            <element name="departmentId" type="tns:部门编号类型"></element>
+            <element name="name" type="nju:姓名类型"></element>
+            <element name="departmentId" type="nju:部门编号类型"></element>
         </sequence>
     </complexType>
 

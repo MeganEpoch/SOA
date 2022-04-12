@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://jw.nju.edu.cn/schema"
-        xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
+        xmlns:tns="http://jw.nju.edu.cn/schema"  
+        xmlns:nju="http://www.nju.edu.cn/schema" elementFormDefault="qualified">
+        <import namespace="http://www.nju.edu.cn/schema"
+		schemaLocation="PersonInfo.xsd" />
 
     <include schemaLocation="PersonInfo.xsd"></include>
     <include schemaLocation="Course.xsd"></include>
@@ -16,7 +19,7 @@
     <complexType name="学生信息类型">
         <sequence>
             <element name="studentId" type="tns:学号类型"></element>
-            <element name="personInfo" type="tns:个人信息类型"></element>
+            <element name="personInfo" type="nju:个人信息类型"></element>
             <element name="courseScore" type="tns:课程成绩类型"></element>
         </sequence>
     </complexType>

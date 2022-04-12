@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://jw.nju.edu.cn/schema"
-        xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
+        targetNamespace="http://www.nju.edu.cn/schema"
+        xmlns:nju="http://www.nju.edu.cn/schema"  elementFormDefault="qualified">
 
 
-    <element name="departmentInfo" type="tns:部门信息类型"></element>
+    <element name="departmentInfo" type="nju:部门信息类型"></element>
 
     <simpleType name="部门编号类型">
         <restriction base="string">
@@ -20,8 +20,8 @@
 
     <complexType name="部门信息类型">
         <sequence>
-            <element name="departmentId" type="tns:部门编号类型"></element>
-            <element name="departmentName" type="tns:部门名称类型"></element>
+            <element name="departmentId" type="nju:部门编号类型"></element>
+            <element name="departmentName" type="nju:部门名称类型"></element>
         </sequence>
     </complexType>
 </schema>
