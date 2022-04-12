@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 确定名空间 -->
 <studentInfo xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nju="http://www.nju.edu.cn/schema" xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
+    <!-- 学号 -->
     <studentId>181250014</studentId>
+
+    <!-- 个人信息 -->
     <personInfo>
         <nju:name>陈文龙</nju:name>
         <nju:departmentId>000322</nju:departmentId>
     </personInfo>
+
+    <!-- 课程列表 -->
     <performanceList>
+        <!-- 具体课程 -->
         <course courseId="000122">
+            <!-- 成绩 -->
             <performance performanceType="平时成绩">
                 <score>96</score>
             </performance>
@@ -23,6 +31,7 @@
                 <score>96</score>
             </performance>
         </course>
+
         <course courseId="000147">
             <performance performanceType="平时成绩">
                 <score>90</score>
