@@ -7,8 +7,6 @@
     <include schemaLocation="Course.xsd"></include>
     <include schemaLocation="assignment 2/ScoreList.xsd"></include>
 
-    <element name="学号" type="tns:学号类型"></element>
-
     <simpleType name="学号类型">
     	<restriction base="string">
     		<length value="9"></length>
@@ -19,12 +17,10 @@
         <sequence>
             <element name="学号" type="tns:学号类型"></element>
             <element name="个人信息" type="tns:个人信息类型"></element>
-        </sequence>
-    </complexType>
-
-    <complexType name="学生课程成绩类型">
-        <sequence>
             <element name="课程成绩" type="tns:课程成绩类型"></element>
         </sequence>
     </complexType>
+
+    <element name="学生信息" type="tns:学生信息类型"></element>
+
 </schema>
