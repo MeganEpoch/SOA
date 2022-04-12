@@ -5,6 +5,8 @@
 
     <include schemaLocation="Department.xsd"></include>
 
+    <element name="personInfo" type="tns:个人信息类型"></element>
+
     <simpleType name="姓名类型">
         <restriction base="string">
             <minLength value="2"/>
@@ -13,8 +15,9 @@
     
     <complexType name="个人信息类型">
         <sequence>
-            <element name="姓名" type="tns:姓名类型"></element>
-            <element name="所属部门" type="tns:部门编号类型"></element>
+            <element name="name" type="tns:姓名类型"></element>
+            <element name="departmentId" type="tns:部门编号类型"></element>
         </sequence>
     </complexType>
+
 </schema>
