@@ -3,7 +3,7 @@
         targetNamespace="http://jw.nju.edu.cn/schema"
         xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
 
-    <include schemaLocation="../Department.xsd"></include>
+    <include schemaLocation="Department.xsd"></include>
 
     <simpleType name="姓名类型">
         <restriction base="string">
