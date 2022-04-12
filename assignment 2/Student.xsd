@@ -3,9 +3,9 @@
         targetNamespace="http://jw.nju.edu.cn/schema"
         xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
 
-    <include schemaLocation="bin/PersonInfo.xsd"></include>
+    <include schemaLocation="PersonInfo.xsd"></include>
     <include schemaLocation="Course.xsd"></include>
-    <include schemaLocation="assignment 2/ScoreList.xsd"></include>
+    <include schemaLocation="ScoreList.xsd"></include>
 
     <simpleType name="学号类型">
     	<restriction base="string">
