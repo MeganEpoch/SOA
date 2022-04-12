@@ -15,12 +15,12 @@
 
     <complexType name="学生信息类型">
         <sequence>
-            <element name="学号" type="tns:学号类型"></element>
-            <element name="个人信息" type="tns:个人信息类型"></element>
-            <element name="课程成绩" type="tns:课程成绩类型"></element>
+            <element name="studentId" type="tns:学号类型"></element>
+            <element name="personInfo" type="tns:个人信息类型"></element>
+            <element name="courseScore" type="tns:课程成绩类型"></element>
         </sequence>
     </complexType>
 
-    <element name="学生信息" type="tns:学生信息类型"></element>
+    <element name="studentInfo" type="tns:学生信息类型"></element>
 
 </schema>
