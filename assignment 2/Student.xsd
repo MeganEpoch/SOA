@@ -20,13 +20,19 @@
         <sequence>
             <element name="score" type="tns:得分类型"></element>
         </sequence>
+        <attribute name="performanceType" type="tns:成绩性质类型"></attribute>
+    </complexType>
+
+    <complexType name="单门课业成绩类型">
+        <sequence  minOccurs="0" maxOccurs="unbounded">
+            <element name="performance" type="tns:课业成绩类型"></element>
+        </sequence>
         <attribute name="courseId" type="tns:课程编号类型"></attribute>
-		<attribute name="performanceType" type="tns:成绩性质类型"></attribute>
     </complexType>
 
     <complexType name="课业成绩列表类型">
 		<sequence minOccurs="0" maxOccurs="unbounded">
-			<element name="performance" type="tns:课程成绩类型"></element>
+			<element name="course" type="tns:单门课业成绩类型"></element>
 		</sequence>
 	</complexType>
 
