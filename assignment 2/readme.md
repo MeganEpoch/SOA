@@ -32,7 +32,7 @@
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 确定名空间 -->
+<!-- 确定名空间 要注意区分 -->
 <studentInfo xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nju="http://www.nju.edu.cn/schema" xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
     <!-- 学号 -->
     <studentId>181250014</studentId>
