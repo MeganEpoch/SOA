@@ -1,0 +1,2 @@
+XML4.xml由SAXParser生成，它读取XML3.xml，将其中不及格的课程成绩加入到scoreList中，然后再利用SAXTransformer将刚刚生成的scoreList转化为xml文件。
+ScoreParseHandler和ScoreXMLGenerator是实现本阶段任务的文件，其他部分沿用了前几次作业的数据结构设计。

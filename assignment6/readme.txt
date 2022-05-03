@@ -1,0 +1,11 @@
+Assignment6
+针对本次作业我们采用的方法是通过xslt进行转换，筛选符合条件的学生成绩，修改后重新写回xml文件，并封装成soap消息返回。
+具体思路：通过 void doPost(HttpServletRequest request, HttpServletResponse response) 接口获取相应的请求参数，Servlet的实现可以参照ScoreServlet，通过注解@WebSevelet实现。从request中获得参数sid,cid,type,score后，调用ScoreService中的方法。
+
+ScoreService中的方法首先将xml文件中符合修改请求的成绩修改好，并写回原来的xml文件中。然后用类似Assignment5的方法读取符合要求的成绩并返回。
+
+脚本代码在src目录下，截图在pictures目录下。
+
+运行方法：将项目打包为war包，放在tomcat下即可运行。
+
+客户端在edu.nju.soa.client下，修改其中参数并运行main方法即可向服务端发送消息

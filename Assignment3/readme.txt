@@ -1,0 +1,3 @@
+文档2.xml由DomParser.java程序生成，对student.xsd进行了修改，使其与scoreList兼容
+学生个人信息除姓名外纯属虚构
+studentList.xml在项目根目录中，createXML.java在src文件夹中
