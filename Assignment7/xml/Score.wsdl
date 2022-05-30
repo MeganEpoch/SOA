@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<description
+        xmlns="http://www.w3.org/ns/wsdl"
+        targetNamespace="http://jw.nju.edu.cn/wsdl"
+        xmlns:tns="http://jw.nju.edu.cn/wsdl"
+        xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+        xmlns:wsoap="http://www.w3.org/ns/wsdl/soap"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:wsdlx="http://www.w3.org/ns/wsdl-extensions"
+>
+
+    <documentation>WSDL成绩管理WEB服务</documentation>
+
+    <import namespace="http://jw.nju.edu.cn/fault/wsdl" location="Fault.wsdl"/>
+
+    <types>
+        <xs:import
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                namespace="http://jw.nju.edu.cn/schema"
+                schemaLocation="schema/ScoreList.xsd" />
+        <xs:import
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                namespace="http://www.nju.edu.cn/schema"
+                schemaLocation="schema/ScoreFault.xsd" />
+    </types>
+
+    <interface name="scoreInterface">
+        <operation name="getScore"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri">
+            <input messageLabel="In" element="tns:学号"/>
+            <output messageLabel="Out" element="tns:课程成绩列表"/>
+            <outfault ref="fault:idNotFindFault" messageLabel="Out" />
+        </operation>
+
+        <operation name="addScore"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   wsdlx:safe = "true">
+            <input messageLabel="In" element="tns:课程成绩列表"/>
+            <output messageLabel="Out" element="tns:课程成绩列表"/>
+            <outfault ref="fault:studentIdFault" messageLabel="Out" />
+            <outfault ref="fault:courseIdFault" messageLabel="Out" />
+            <outfault ref="fault:scoreTypeFault" messageLabel="Out" />
+            <outfault ref="fault:scoreModifyFault" messageLabel="Out" />
+        </operation>
+
+        <operation name="modifyScore"
+                   pattern="http://www.w3.org/ns/wsdl/in-out"
+                   style="http://www.w3.org/ns/wsdl/style/iri"
+                   wsdlx:safe = "true">
+            <input messageLabel="In" element="tns:课程成绩列表"/>
+            <input messageLabel="Out" element="tns:课程成绩列表"/>
+            <outfault ref="fault:studentIdFault" messageLabel="Out" />
+            <outfault ref="fault:courseIdFault" messageLabel="Out" />
+            <outfault ref="fault:scoreTypeFault" messageLabel="Out" />
+            <outfault ref="fault:scoreModifyFault" messageLabel="Out" />
+        </operation>
+    </interface>
+
+    <binding name="ScoreBinding"
+             interface="tns:scoreInterface"
+             type="http://www.w3.org/ns/wsdl/soap"
+             wsoap:protocol="http://www.w3.org/2003/05/soap/bindings/HTTP/">
+        <operation ref="tns:getScore"
+                   wsoap:mep="http://www.w3.org/2003/05/soap/mep/soap-response" />
+        <operation ref="tns:addScore"
+                   wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+        <operation ref="tns:modifyScore"
+                   wsoap:mep="http://www.w3.org/2003/05/soap/mep/request-response" />
+        <fault ref="fault:idNotFindFault" wsoap:code="soap:Sender" />
+        <fault ref="fault:scoreTypeFault" wsoap:code="soap:Sender" />
+        <fault ref="fault:scoreModifyFault" wsoap:code="soap:Sender" />
+        <fault ref="fault:studentIdFault" wsoap:code="soap:Sender" />
+        <fault ref="fault:courseIdFault" wsoap:code="soap:Sender" />
+    </binding>
+
+    <service name="ScoreService"
+             interface="tns:scoreInterface">
+        <endpoint name="ScoreEndpoint"
+                  binding="tns:ScoreBinding"
+                  address="http://www.nju.edu.cn:8080/score"/>
+    </service>
+
+</description>
